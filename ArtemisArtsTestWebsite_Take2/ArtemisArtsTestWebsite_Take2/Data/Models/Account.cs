@@ -28,7 +28,5 @@ namespace ArtemisArtsTestWebsite_Take2.Data.Models
         [Required]
         [DataType(DataType.Text)]
         public string ProfilePictureUri { get; set; }
-        [DataType(DataType.DateTime)]
-        public DateTime? RegisterDate { get; set; }
     }
 }

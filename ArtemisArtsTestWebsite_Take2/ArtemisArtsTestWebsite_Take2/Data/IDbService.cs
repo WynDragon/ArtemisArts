@@ -17,6 +17,11 @@ namespace ArtemisArtsTestWebsite_Take2.Data
         public Task RemoveAccountAsync(int accId);
         #endregion
 
+        #region Pages
+        public Task<bool> AddPageAsync(Pages page);
+        public Task<List<Pages>> GetPagesListAsync();
+        #endregion
+
         #region Draft
 
         #endregion
@@ -34,7 +39,7 @@ namespace ArtemisArtsTestWebsite_Take2.Data
         #endregion
 
         #region Scripts
-
+        public Task<bool> CleanUpDb();
         #endregion
 
     }

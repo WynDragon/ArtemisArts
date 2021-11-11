@@ -78,7 +78,17 @@ namespace ArtemisArtsTestWebsite_Take2.Data
         #endregion
 
         #region Pages Queries
-        public async Task<List<Image>> GetPagesListAsync()
+        //similar to Images, but is for comic pages only
+        public async Task<bool> AddPageAsync(Pages page)
+        {
+            using var db = new SqlConnection(_configuration.GetConnectionString(CONN_STR_RW));
+            db.Open();
+            var added = await db.ExecuteAsync("INSERT INTO Pages (AccountId, Url, DraftId, CreateDate, Notes) " +
+                "VALUES(@AccountId, @Url, @DraftId, @CreateDate, @Notes)", page) > 0;
+            return added;
+        }
+
+        public async Task<List<Pages>> GetPagesListAsync()
         {
             using var db = new SqlConnection(_configuration.GetConnectionString(CONN_STR_RO));
             db.Open();
@@ -86,6 +96,23 @@ namespace ArtemisArtsTestWebsite_Take2.Data
             return history.ToList(); //TO DO: define an IEnumerable called ToList for Pages
         }
 
+
         #endregion
+
+
+        public async Task<bool> CleanUpDb()
+        {
+            using var db = new SqlConnection(_configuration.GetConnectionString(CONN_STR_RW));
+            var sql = "exec [clean_up_deleted_accounts]"; //stored procedure to remove deleted accounts
+            try
+            {
+                db.Query(sql, null);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }
