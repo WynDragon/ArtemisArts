@@ -4,11 +4,11 @@ using System.ComponentModel.DataAnnotations;
 namespace ArtemisArtsTestWebsite_Take2.Data.Models
 {
     //webcomic pages
-    public class Pages : BaseModel
+    public class Comics : BaseModel
     {
         [Key]
         [Required]
-        public int PageId { get; set; }
+        public int ComicId { get; set; }
 
         [Required]
         public int AccountId { get; set; }

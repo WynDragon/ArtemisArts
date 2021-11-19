@@ -79,21 +79,21 @@ namespace ArtemisArtsTestWebsite_Take2.Data
 
         #region Pages Queries
         //similar to Images, but is for comic pages only
-        public async Task<bool> AddPageAsync(Pages page)
+        public async Task<bool> AddPageAsync(Comics comic)
         {
             using var db = new SqlConnection(_configuration.GetConnectionString(CONN_STR_RW));
             db.Open();
             var added = await db.ExecuteAsync("INSERT INTO Pages (AccountId, Url, DraftId, CreateDate, Notes) " +
-                "VALUES(@AccountId, @Url, @DraftId, @CreateDate, @Notes)", page) > 0;
+                "VALUES(@AccountId, @Url, @DraftId, @CreateDate, @Notes)", comic) > 0;
             return added;
         }
 
-        public async Task<List<Pages>> GetPagesListAsync()
+        public async Task<List<Comics>> GetPagesListAsync()
         {
             using var db = new SqlConnection(_configuration.GetConnectionString(CONN_STR_RO));
             db.Open();
-            var history = await db.ExecuteAsync("SELECT * FROM Pages;");
-            return history.ToList(); //TO DO: define an IEnumerable called ToList for Pages
+            var history = await db.ExecuteAsync("SELECT * FROM Comics;");
+            return history.ToList(); //TO DO: define an IEnumerable called ToList for Comics
         }
 
 
