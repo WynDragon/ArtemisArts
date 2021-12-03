@@ -88,13 +88,14 @@ namespace ArtemisArtsTestWebsite_Take2.Data
             return added;
         }
 
+        /*
         public async Task<List<Comics>> GetPagesListAsync()
         {
             using var db = new SqlConnection(_configuration.GetConnectionString(CONN_STR_RO));
             db.Open();
             var history = await db.ExecuteAsync("SELECT * FROM Comics;");
             return history.ToList(); //TO DO: define an IEnumerable called ToList for Comics
-        }
+        }*/
 
 
         #endregion

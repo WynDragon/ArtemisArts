@@ -7,6 +7,19 @@ a.navbar-brand {
   word-break: break-all;
 }
 
+/* class for global header -- inkbun */
+div.head {
+    background-color: #e5dae8;
+    height: 100vh;
+    /*height: calc(var(--vh, 1vh) * 100); custom calc for height of div*/
+    width: 100%;
+}
+
+div.img-inkbun {
+    height: 80%;
+    width: auto;
+}
+
 /* Provide sufficient contrast against white background */
 a {
   color: #0366d6;

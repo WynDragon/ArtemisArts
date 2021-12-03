@@ -19,7 +19,7 @@ namespace ArtemisArtsTestWebsite_Take2.Data
 
         #region Pages
         public Task<bool> AddPageAsync(Comics comic);
-        public Task<List<Comics>> GetPagesListAsync();
+        //public Task<List<Comics>> GetPagesListAsync();
         #endregion
 
         #region Draft
