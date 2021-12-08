@@ -10,15 +10,44 @@ a.navbar-brand {
 /* class for global header -- inkbun */
 div.head {
     background-color: #e5dae8;
-    height: 100vh;
+    height: 150px;
     /*height: calc(var(--vh, 1vh) * 100); custom calc for height of div*/
     width: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
 }
 
 div.img-inkbun {
     height: 80%;
     width: auto;
+    vertical-align: bottom;
+    left: 10%;
+    padding-bottom: 15px;
 }
+
+div.social_media {
+    align-self: flex-end;
+    padding-left: 20px;
+    right: 10%;
+    padding-bottom: 15px;
+}
+
+div.navbar {
+    position: absolute;
+    width: 100%;
+    background-color: ;
+}
+
+li {
+    float: left;
+}
+
+    li a {
+        display: block;
+        padding-left: 30px;
+    }
+
 
 /* Provide sufficient contrast against white background */
 a {
